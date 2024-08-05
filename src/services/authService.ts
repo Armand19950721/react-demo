@@ -11,6 +11,7 @@ export interface MemberInfo {
   IsAdmin: boolean;
   PermissionsJson: string;
   OwnPicbotsJson: string;
+  Token:string
   CreateAt: string;
   UpdateAt: string;
   DeleteAt: string | null;
@@ -35,8 +36,9 @@ export const login = async (credentials: LoginRequest): Promise<void> => {
     const data = JSON.parse(response.data.Data);
     const token = data.Token;
     const memberInfo = data.MemberInfo;
+    memberInfo.Token = token
     await localforage.setItem('memberInfo', memberInfo);
-    await localforage.setItem('token', token);
+
   } else {
     throw new Error('Login failed');
   }
@@ -49,10 +51,11 @@ export const loadMemberInfo = async (): Promise<MemberInfo> => {
     throw Error("err cant find memberInfo in localforge")
   }
 
+  console.log("loadMemberInfo",{memberInfo})
+
   return memberInfo;
 };
 
 export const clearMemberInfo = async (): Promise<void> => {
   await localforage.removeItem('memberInfo');
-  await localforage.removeItem('token');
 };

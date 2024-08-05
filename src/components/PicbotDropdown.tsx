@@ -1,6 +1,7 @@
 // src/PicbotDropdown.tsx
 import React, { useEffect, useState } from 'react';
 import { Picbot, fetchPicbots } from '../services/picbotService';
+import { loadMemberInfo } from '../services/authService';
 
 interface PicbotDropdownProps {
   selectedPicbot: string;
@@ -11,9 +12,11 @@ const PicbotDropdown: React.FC<PicbotDropdownProps> = ({ selectedPicbot, onChang
   const [picbots, setPicbots] = useState<Picbot[]>([]);
 
   useEffect(() => {
+    console.log('get picbot info');
     const getPicbots = async () => {
       try {
-        const data = await fetchPicbots();
+        const info = await loadMemberInfo();
+        const data = await fetchPicbots(info.Token);
         setPicbots(data);
       } catch (error) {
         console.error('Error fetching picbots:', error);
@@ -21,6 +24,7 @@ const PicbotDropdown: React.FC<PicbotDropdownProps> = ({ selectedPicbot, onChang
     };
 
     getPicbots();
+
   }, []);
 
   return (

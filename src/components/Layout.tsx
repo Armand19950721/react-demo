@@ -1,23 +1,11 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { loadMemberInfo, clearMemberInfo } from '../services/authService';
+import { loadMemberInfo, clearMemberInfo, MemberInfo } from '../services/authService';
 import { fetchMenu, MenuItem } from '../services/menuService';
 import { router_path } from '../routers';
 
 interface LayoutProps {
   children: ReactNode;
-}
-
-interface MemberInfo {
-  Id: string;
-  Account: string;
-  Password: string;
-  IsAdmin: boolean;
-  PermissionsJson: string;
-  OwnPicbotsJson: string;
-  CreateAt: string;
-  UpdateAt: string;
-  DeleteAt: string | null;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {

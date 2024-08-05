@@ -1,7 +1,8 @@
 export const getAuthHeader = (token: string) => {
+  console.log("getAuthHeader",{token})
     return {
       'Content-Type': 'multipart/form-data',
-      'Authorization': `Bearer ${token}`
+      'authorization': `Bearer ${token}`
     };
   };
 
