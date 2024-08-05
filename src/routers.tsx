@@ -6,6 +6,8 @@ const router_path = {
   login: '/login',
   member: '/member',
   gallery: '/picbot/gallery',
+  contextDemo: '/context-demo',
+  reduxDemo: '/redux-demo',
 };
 
 const routers = createBrowserRouter([
@@ -24,6 +26,14 @@ const routers = createBrowserRouter([
   {
     path: router_path.gallery,
     element: <LazyLoadRoutes componentName="Gallery" />,
+  },
+  {
+    path: router_path.contextDemo,
+    element: <LazyLoadRoutes componentName="ContextDemo" />,
+  },
+  {
+    path: router_path.reduxDemo,
+    element: <LazyLoadRoutes componentName="ReduxDemo" />,
   },
 ]);
 
