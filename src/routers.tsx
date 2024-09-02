@@ -7,7 +7,7 @@ const router_path = {
   member: '/member',
   gallery: '/picbot/gallery',
   contextDemo: '/context-demo',
-  reduxDemo: '/redux-demo',
+  rematchDemo: '/rematch-demo',
 };
 
 const routers = createBrowserRouter([
@@ -32,8 +32,8 @@ const routers = createBrowserRouter([
     element: <LazyLoadRoutes componentName="ContextDemo" />,
   },
   {
-    path: router_path.reduxDemo,
-    element: <LazyLoadRoutes componentName="ReduxDemo" />,
+    path: router_path.rematchDemo,
+    element: <LazyLoadRoutes componentName="RematchDemo" />,
   },
 ]);
 

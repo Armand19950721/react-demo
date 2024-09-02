@@ -2,11 +2,11 @@
 
 This template provides a minimal setup to implement: 
 ```
-React ,Redux ,Vite ,Tailwind ,LazyLoad, Localforge
+React ,Rematch ,Vite ,Tailwind ,LazyLoad, Localforge
 ```
 Also includes demos for:
 ```
- prop, context, redux
+ prop, context, Rematch
 ```
 With a basic structure of folders and files.
 

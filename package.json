@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "@rematch/core": "^2.2.0",
+    "@rematch/loading": "^2.1.2",
     "@types/axios": "^0.14.0",
     "autoprefixer": "^10.4.19",
     "axios": "^1.7.2",

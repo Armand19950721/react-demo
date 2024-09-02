@@ -20,7 +20,7 @@ export const fetchMenu = async (): Promise<MenuItem[]> => {
       ]
     },
     { name: "contextDemo", type: "button", displayName: "ContextDemo", show: true, children: [] },
-    { name: "reduxDemo", type: "button", displayName: "ReduxDemo", show: true, children: [] },
+    { name: "rematchDemo", type: "button", displayName: "RematchDemo", show: true, children: [] },
   ];
 
   return menuInfo;
